@@ -1,0 +1,39 @@
+{
+  "name": "@rtprog/json-string",
+  "version": "0.0.1",
+  "description": "Library for passing JSON structures in plain string.",
+  "main": "src/index.cjs",
+  "module": "src/index.mjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.mjs",
+      "require": "./src/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "rollup src/index.mjs --file src/index.cjs --format cjs",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryszard-Trojnacki/json-string.git"
+  },
+  "keywords": [
+    "json",
+    "asciidoc",
+    "asciidoctor",
+    "string",
+    "stringify"
+  ],
+  "author": "Ryszard Trojnacki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ryszard-Trojnacki/json-string/issues"
+  },
+  "homepage": "https://github.com/Ryszard-Trojnacki/json-string#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "rollup": "^4.21.2"
+  }
+}
