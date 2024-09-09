@@ -22,12 +22,24 @@ test('stringifyParseTest', () => {
 })
 
 test('combinedTest', () => {
-    const str='Some text'+stringify({ x: 10, y: 100 })+'. More text';
-    const res=parse(str);
+    let str='Some text'+stringify({ x: 10, y: 100 })+'. More text';
+    let res=parse(str);
     expect(res.length).toBe(3);
     expect(res[0]).toBe('Some text');
     expect(res[1]).toStrictEqual({ x: 10, y: 100 });
     expect(res[2]).toBe('. More text');
+
+    str='Some text'+stringify({ x: 10, y: 100 });
+    res=parse(str);
+    expect(res.length).toBe(2);
+    expect(res[0]).toBe('Some text');
+    expect(res[1]).toStrictEqual({ x: 10, y: 100 });
+
+    str=stringify({ x: 10, y: 100 })+'. More text';
+    res=parse(str);
+    expect(res.length).toBe(2);
+    expect(res[0]).toStrictEqual({ x: 10, y: 100 });
+    expect(res[1]).toBe('. More text');
 })
 
 test('parseNotStringTest', () => {
