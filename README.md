@@ -16,7 +16,7 @@ This library provides two methods:
 
 ## Installation
 ```shell
-npm install json-string
+npm install @rtprog/json-string
 ```
 
 ## Usage
